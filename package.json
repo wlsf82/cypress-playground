@@ -4,7 +4,8 @@
   "description": "Cypress Playground app and tests.",
   "main": "src/index.html",
   "scripts": {
-    "test": "cypress open"
+    "cy:open": "cypress open",
+    "test": "cypress run"
   },
   "keywords": [
     "Cypress Playground",
