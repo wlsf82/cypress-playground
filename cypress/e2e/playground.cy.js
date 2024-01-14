@@ -21,6 +21,7 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
   })
 
   it('types in an input which "signs" a form', () => {
-    cy.get('#type textarea').type('Hi, Cypress Test Design Masterclass!')
+    cy.get('#type textarea').type('Mad Max').blur()
+    cy.contains('i', 'Mad Max').should('be.visible')
   })
 })

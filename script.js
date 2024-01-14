@@ -9,3 +9,7 @@ subscribeButton.addEventListener('click', event => {
     document.querySelector('#click span#success').style.display = 'none'
   }, 3000)
 }, false)
+
+document.querySelector('#type textarea').addEventListener('change', event => {
+  document.getElementById('signature').innerText = event.target.value
+}, false)
