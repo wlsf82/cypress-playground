@@ -54,4 +54,13 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
     cy.get('#select select').select('VIP')
     cy.contains('p', "You've selected: VIP")
   })
+
+  it('uploads a file and asserts the correct file name appears as a paragraph', () => {
+    cy.get('#select-file input[type="file"]')
+      .selectFile('cypress/fixtures/example.json')
+    cy.contains(
+      'p',
+      'The following file has been selected for upload: example.json'
+    ).should('be.visible')
+  })
 })

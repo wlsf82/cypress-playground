@@ -57,3 +57,9 @@ document.querySelector('#select select').addEventListener('change', event => {
       selectedTypeParagraph.innerText = "You haven't selected a type yet."
   }
 })
+
+document.querySelector('#select-file input[type="file"]')
+  .addEventListener('change', event => {
+    document.querySelector('#select-file p').innerHTML =
+      `The following file has been selected for upload: <strong>${event.target.files[0].name}</strong>`
+  })
