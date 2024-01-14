@@ -7,6 +7,6 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
   })
 
   it('clicks a button and ensure an action is triggered', () => {
-    cy.contains('#click button', 'Subscribe.').click()
+    cy.contains('#click button', 'Subscribe').click()
   })
 })
