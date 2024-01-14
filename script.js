@@ -13,3 +13,12 @@ subscribeButton.addEventListener('click', event => {
 document.querySelector('#type textarea').addEventListener('change', event => {
   document.getElementById('signature').innerText = event.target.value
 }, false)
+
+document.querySelector('#check input[type="checkbox"]')
+  .addEventListener('change', event => {
+    const signature = document.querySelector('#check textarea').value
+
+    event.target.checked ?
+      document.getElementById('signature-triggered-by-check').innerText = signature :
+      document.getElementById('signature-triggered-by-check').innerText = ''
+  })

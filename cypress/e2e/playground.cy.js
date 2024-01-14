@@ -20,8 +20,16 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
     ).should('not.be.visible')
   })
 
-  it('types in an input which "signs" a form', () => {
+  it('types in an input which "signs" a form, then blurs it to see the result', () => {
     cy.get('#type textarea').type('Mad Max').blur()
-    cy.contains('i', 'Mad Max').should('be.visible')
+    cy.contains('#type em', 'Mad Max').should('be.visible')
+  })
+
+  it('types in the signature, then checks the checkbox to see the preview, then unchecks it', () => {
+    cy.get('#check textarea').type('Scarecrow')
+    cy.get('#check input[type="checkbox"]').check()
+    cy.contains('#check em', 'Scarecrow').should('be.visible')
+    cy.get('#check input[type="checkbox"]').uncheck()
+    cy.contains('#check em', 'Scarecrow').should('not.exist')
   })
 })
