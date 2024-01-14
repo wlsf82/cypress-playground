@@ -46,13 +46,13 @@ document.querySelector('#select select').addEventListener('change', event => {
   switch (selectedValue) {
     case 'basic':
       selectedTypeParagraph.innerText = `You've selected: ${selectedValue.toUpperCase()}`
-      break;
+      break
     case 'standard':
       selectedTypeParagraph.innerText = `You've selected: ${selectedValue.toUpperCase()}`
-      break;
+      break
     case 'vip':
       selectedTypeParagraph.innerText = `You've selected: ${selectedValue.toUpperCase()}`
-      break;
+      break
     default:
       selectedTypeParagraph.innerText = "You haven't selected a type yet."
   }
@@ -63,3 +63,13 @@ document.querySelector('#select-file input[type="file"]')
     document.querySelector('#select-file p').innerHTML =
       `The following file has been selected for upload: <strong>${event.target.files[0].name}</strong>`
   })
+
+document.querySelector('#intercept button').addEventListener('click', async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+  const body = await response.json()
+
+  return {
+    status: response.status,
+    body,
+  }
+})

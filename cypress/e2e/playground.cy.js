@@ -63,4 +63,17 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
       'The following file has been selected for upload: example.json'
     ).should('be.visible')
   })
+
+  it('clicks a button and triggers a request', () => {
+    cy.intercept('GET', 'https://jsonplaceholder.typicode.com/todos/1')
+      .as('getTodo')
+    cy.contains('#intercept button', 'Get TODO').click()
+    cy.wait('@getTodo')
+      .as('todo')
+      .its('response.statusCode')
+      .should('be.equal', 200)
+    cy.get('@todo')
+      .its('response.body.id')
+      .should('be.equal', 1)
+  })
 })
