@@ -1,5 +1,5 @@
 describe('Cypress Playground - Test Design Masterclas TAT', () => {
-  beforeEach(() => cy.visit('./index.html'))
+  beforeEach(() => cy.visit('./src/index.html'))
 
   it('after visiting a page, asserts some text is visible', () => {
     cy.contains('h1', 'Cypress Playground').should('be.visible')

@@ -1,14 +1,20 @@
 {
   "name": "test-design-masterclass",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Cypress Playground app and tests.",
+  "main": "src/index.html",
   "scripts": {
     "test": "cypress open"
   },
-  "keywords": [],
+  "keywords": [
+    "Cypress Playground",
+    "Test Design Masterclass TAT",
+    "Talking About Testing",
+    "Cypress Testing",
+    "Testing"
+  ],
   "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "cypress": "^13.6.2"
   }
