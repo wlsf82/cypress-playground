@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cypress Test Design Masterclass - Talking About Testing</title>
   </head>
+  <style>
+    .section {
+      border-bottom: 1px solid black;
+      padding-bottom: 10px;
+    }
+  </style>
   <body>
     <div>
       <h1 id="title">Cypress Playground</h1>
-      <div id="visit">
+      <div id="visit" class="section">
         <h2>
           <pre>cy.visit()</pre>
         </h2>
       </div>
-      <div id="click">
+      <div id="click" class="section">
         <h2>
           <pre>.click()</pre>
         </h2>
@@ -25,7 +31,7 @@
           <button type="submit">Subscribe</button>
         </form>
       </div>
-      <div id="type">
+      <div id="type" class="section">
         <h2>
           <pre>.type() and .blur()</pre></pre>
         </h2>
