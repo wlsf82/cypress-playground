@@ -25,14 +25,16 @@ document.querySelector('#check input[type="checkbox"]')
 
 document.querySelector('#check-radio input[type="radio"][value="on"]')
   .addEventListener('change', event => {
-    event.target.checked ?
-    document.querySelector('#check-radio p').innerText = 'ON' :
-    document.querySelector('#check-radio p').innerText = 'OFF'
+    if (event.target.checked) {
+      document.querySelector('#check-radio p').innerText = 'ON'
+      document.querySelector('#check-radio p').style.color = 'green'
+    }
   })
 
 document.querySelector('#check-radio input[type="radio"][value="off"]')
   .addEventListener('change', event => {
-    event.target.checked ?
-    document.querySelector('#check-radio p').innerText = 'OFF' :
-    document.querySelector('#check-radio p').innerText = 'ON'
+    if (event.target.checked) {
+      document.querySelector('#check-radio p').innerText = 'OFF'
+      document.querySelector('#check-radio p').style.color = 'red'
+    }
   })
