@@ -22,3 +22,17 @@ document.querySelector('#check input[type="checkbox"]')
       document.getElementById('signature-triggered-by-check').innerText = signature :
       document.getElementById('signature-triggered-by-check').innerText = ''
   })
+
+document.querySelector('#check-radio input[type="radio"][value="on"]')
+  .addEventListener('change', event => {
+    event.target.checked ?
+    document.querySelector('#check-radio p').innerText = 'ON' :
+    document.querySelector('#check-radio p').innerText = 'OFF'
+  })
+
+document.querySelector('#check-radio input[type="radio"][value="off"]')
+  .addEventListener('change', event => {
+    event.target.checked ?
+    document.querySelector('#check-radio p').innerText = 'OFF' :
+    document.querySelector('#check-radio p').innerText = 'ON'
+  })

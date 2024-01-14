@@ -32,4 +32,14 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
     cy.get('#check input[type="checkbox"]').uncheck()
     cy.contains('#check em', 'Scarecrow').should('not.exist')
   })
+
+  it('checks both possible radios and asserts if it is "on" or "off"', () => {
+    cy.contains('#check-radio p', 'ON').should('be.visible')
+    cy.get('#check-radio input[type="radio"][value="off"]').check()
+    cy.contains('#check-radio p', 'ON').should('not.exist')
+    cy.contains('#check-radio p', 'OFF').should('be.visible')
+    cy.get('#check-radio input[type="radio"][value="on"]').check()
+    cy.contains('#check-radio p', 'OFF').should('not.exist')
+    cy.contains('#check-radio p', 'ON').should('be.visible')
+  })
 })
