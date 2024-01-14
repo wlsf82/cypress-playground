@@ -48,4 +48,10 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
       .should('be.visible')
       .and('have.css', 'color', 'rgb(0, 128, 0)')
   })
+
+  it('selects a type via the dropdown field and asserts on the selection', () => {
+    cy.contains('p', "You haven't selected a type yet.")
+    cy.get('#select select').select('VIP')
+    cy.contains('p', "You've selected: VIP")
+  })
 })

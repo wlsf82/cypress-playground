@@ -38,3 +38,22 @@ document.querySelector('#check-radio input[type="radio"][value="off"]')
       document.querySelector('#check-radio p').style.color = 'red'
     }
   })
+
+document.querySelector('#select select').addEventListener('change', event => {
+  const selectedTypeParagraph = document.querySelector('#select p')
+  const selectedValue = event.target.value
+
+  switch (selectedValue) {
+    case 'basic':
+      selectedTypeParagraph.innerText = `You've selected: ${selectedValue.toUpperCase()}`
+      break;
+    case 'standard':
+      selectedTypeParagraph.innerText = `You've selected: ${selectedValue.toUpperCase()}`
+      break;
+    case 'vip':
+      selectedTypeParagraph.innerText = `You've selected: ${selectedValue.toUpperCase()}`
+      break;
+    default:
+      selectedTypeParagraph.innerText = "You haven't selected a type yet."
+  }
+})
