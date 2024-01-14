@@ -59,13 +59,16 @@ document.querySelector('#select select[name="selection-type"]')
     }
   }, false)
 
-document.querySelector('#select select[multiple]').addEventListener('change', event => {
-  let selectedOptions = event.target.selectedOptions
-  selectedOptions = Array.from(selectedOptions)
-  selectedOptions = selectedOptions.map(option => option.value)
-  document.querySelector('#select #fruits-paragraph').innerHTML =
-   `You've selected the following fruits: [<strong>${selectedOptions}</strong>]`
-}, false)
+document.querySelector('#select select[multiple]')
+  .addEventListener('change', event => {
+    let selectedOptions = event.target.selectedOptions
+    selectedOptions = Array.from(selectedOptions)
+    selectedOptions = selectedOptions.map(option => option.value)
+    selectedOptions = selectedOptions.join(', ')
+
+    document.querySelector('#select #fruits-paragraph').innerHTML =
+    `You've selected the following fruits: <strong>${selectedOptions}</strong>`
+  }, false)
 
 document.querySelector('#select-file input[type="file"]')
   .addEventListener('change', event => {

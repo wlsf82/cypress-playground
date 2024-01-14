@@ -58,7 +58,7 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
   it('selects multiple fruits via the dropdown field and asserts on the selection', () => {
     cy.contains('p', "You haven't selected any fruit yet.")
     cy.get('#select select[multiple]').select(['apple', 'banana', 'cherry'])
-    cy.contains('p', "You've selected the following fruits: [apple,banana,cherry]")
+    cy.contains('p', "You've selected the following fruits: apple, banana, cherry")
   })
 
   it('uploads a file and asserts the correct file name appears as a paragraph', () => {
