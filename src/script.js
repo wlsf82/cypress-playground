@@ -1,6 +1,4 @@
-const subscribeButton = document.getElementById('click')
-
-subscribeButton.addEventListener('click', event => {
+document.querySelector('#click button').addEventListener('click', event => {
   event.preventDefault()
 
   document.querySelector('#click span#success').style.display = 'block'
