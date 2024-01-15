@@ -26,22 +26,22 @@ document.querySelector('#check input[type="checkbox"]')
 document.querySelector('#check-radio input[type="radio"][value="on"]')
   .addEventListener('change', event => {
     if (event.target.checked) {
-      document.querySelector('#check-radio p').innerText = 'ON'
-      document.querySelector('#check-radio p').style.color = 'green'
+      document.querySelector('#check-radio p#on-off').innerText = 'ON'
+      document.querySelector('#check-radio p#on-off').style.color = 'green'
     }
   }, false)
 
 document.querySelector('#check-radio input[type="radio"][value="off"]')
   .addEventListener('change', event => {
     if (event.target.checked) {
-      document.querySelector('#check-radio p').innerText = 'OFF'
-      document.querySelector('#check-radio p').style.color = 'red'
+      document.querySelector('#check-radio p#on-off').innerText = 'OFF'
+      document.querySelector('#check-radio p#on-off').style.color = 'red'
     }
   }, false)
 
 document.querySelector('#select select[name="selection-type"]')
   .addEventListener('change', event => {
-    const selectedTypeParagraph = document.querySelector('#select p')
+    const selectedTypeParagraph = document.querySelector('#select p#select-selection')
     const selectedValue = event.target.value
 
     switch (selectedValue) {
@@ -72,7 +72,7 @@ document.querySelector('#select select[multiple]')
 
 document.querySelector('#select-file input[type="file"]')
   .addEventListener('change', event => {
-    document.querySelector('#select-file p').innerHTML =
+    document.querySelector('#select-file p#file').innerHTML =
       `The following file has been selected for upload: <strong>${event.target.files[0].name}</strong>`
   }, false)
 

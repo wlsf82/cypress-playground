@@ -14,11 +14,22 @@
         <h2>
           <pre>cy.visit()</pre>
         </h2>
+        <p>When writing automated tests for web applications, the first step is to visit the URL of the application under test.</p>
+        <p>For that, Cypress offers the <code>cy.visit()</code> command.</p>
+        <p>To visit a web page with Cypress, simply pass the desired URL as a string to the <code>cy.visit()</code> command.</p>
+        <p>For example: <code>cy.visit('https://google.com')</code>.</p>
       </div>
       <div id="click" class="section">
         <h2>
           <pre>.click()</pre>
         </h2>
+        <p>One of the most common tasks in testing web applications is to click a button, for example, to submit a form.</p>
+        <p>For that, Cypress offers the <code>.click()</code> command.</p>
+        <p>To click on an element, you first have to get it, using the <code>cy.get()</code>command, for example.</p>
+        <p>After you get it, you can chain a <code>.click() to it.</code></p>
+        <p>For example: <code>cy.get('button[type="submit"]').click()</code>.</p>
+        <p>You could also get the element using the <code>cy.contains()</code>command.</p>
+        <p>For example: <code>cy.contains('button', 'Subscribe').click()</code>.</p>
         <div class="success">
           <span id="success" style="display: none;">You've been successfully subscribed to our newsletter.</span>
         </div>
@@ -26,16 +37,26 @@
       </div>
       <div id="type" class="section">
         <h2>
-          <pre>.type() and .blur()</pre></pre>
+          <pre>.type() and .blur()</pre>
         </h2>
+        <p>Another common tasks in testing web applications is to type into text fields, such as a textarea.</p>
+        <p>For that, Cypress offers the <code>.type()</code> command.</p>
+        <p>Simply chain a <code>.type()</code>to the element you want to type into, passing to <code>.type()</code>the text you want typed, as a string.</p>
+        <p>For example: <code>cy.get('textarea').type('Cypress is awesome!')</code>.</p>
+        <p>If after typing you want to remove the focus from the element you just typed in, Cypress offers the <code>.blur()</code>command.</p>
+        <p>Here's an example of typing then blurring an element: <code>cy.get('textarea').type('Cypress Playground').blur()</code>.</p>
         <textarea placeholder="Joe Doe"></textarea>
         <p>Signature's preview:</p>
         <em id="signature"></em>
       </div>
       <div id="check" class="section">
         <h2>
-          <pre>.check() and .uncheck()</pre></pre>
+          <pre>.check() and .uncheck()</pre>
         </h2>
+        <p>Sometimes, you need to check (or uncheck) a checkbox.</p>
+        <p>For that, Cypress offers the <code>.check()</code> and <code>.uncheck()</code> commands.</p>
+        <p>Here's an example of checking a checkbox: <code>cy.get('input[type="checkbox"]').check()</code>.</p>
+        <p>And here's how you would uncheck it: <code>cy.get('input[type="checkbox"]').uncheck()</code>.</p>
         <textarea placeholder="Jane Doe"></textarea>
         <div>
           <label for="signature-checkbox">Signature's preview</label>
@@ -46,25 +67,39 @@
       </div>
       <div id="check-radio" class="section">
         <h2>
-          <pre>cy.get('input[type="radio"]').check()</pre></pre>
+          <pre>cy.get('input[type="radio"]').check()</pre>
         </h2>
+        <p>For radio input fields, you can also use the <code>.check()</code> command.</p>
+        <p>For example: <code>cy.get(input[type="radio"]).check()</code>.</p>
         <label for="on">On</label>
         <input id="on" type="radio" name="on-or-off" value="on" checked />
         <label for="off">Off</label>
         <input id="off" type="radio" name="on-or-off" value="off" />
-        <strong><p>ON</p></strong>
+        <strong><p id="on-off">ON</p></strong>
       </div>
       <div id="select" class="section">
         <h2>
-          <pre>.select()</pre></pre>
+          <pre>.select()</pre>
         </h2>
+        <p>Another command element we usually need to intereact with in web apps is the dropdown select field.</p>
+        <p>For that, Cypress offers the <code>.select()</code> command.</p>
+        <p>Simply chaing the <code>.select()</code>command to a <code>select</code>HTML element, then pass to it the option you want to select.</p>
+        <p>The option can be chosen via its <code>content, value, or index</code>.</p>
+        <p>Examples:</p>
+        <p>Selection via content: <code>cy.get('select').select('Basic')</code>.</p>
+        <p>Selection via value: <code>cy.get('select').select('standard')</code>.</p>
+        <p>Selection via index: <code>cy.get('select').select(3)</code>.</p>
         <select name="selection-type" id="selection-type">
           <option disabled selected>Select an option</option>
           <option value="basic">Basic</option>
           <option value="standard">Standard</option>
           <option value="vip">VIP</option>
         </select>
-        <p>You haven't selected a type yet.</p>
+        <p id="select-selection">You haven't selected a type yet.</p>
+        <br>
+        <p>You might also want to interect with multiple options select fields.</p>
+        <p>For that, pass to the <code>.select()</code> command an array o values.</p>
+        <p>For example: <code>cy.get('select[multiple]').select(['apple', 'cherry'])</code>.</p>
         <select name="fruit" id="fruit" multiple>
           <option value="apple">Apple</option>
           <option value="banana">Banana</option>
@@ -76,16 +111,40 @@
       </div>
       <div id="select-file" class="section">
         <h2>
-          <pre>.selectFile()</pre></pre>
+          <pre>.selectFile()</pre>
         </h2>
+        <p>To select a file into a input of type file, Cypress offers the <code>.selectFile()</code> command.</p>
+        <p>Simply pass to it the relative path of the file you want to select, based on the <code>cypress.config.js</code> file.</p>
+        <p>For example: <code>cy.get('input[type="file"]').select('cypress/fixtures/example.json')</code>.</p>
         <label for="file-upload">Attach a file</label>
         <input id="file-upload" type="file" />
-        <p></p>
+        <p id="file"></p>
       </div>
       <div id="intercept" class="section">
         <h2>
-          <pre>cy.intercept(...).as('alias') and cy.wait('@alias')</pre></pre>
+          <pre>cy.intercept(...).as('alias')</pre>
+          <span>and</span>
+          <pre>cy.wait('@alias')</pre>
         </h2>
+        <p>One of the most awesome features of Cypress, is it ability to "listen" to what's going on at the network level.</p>
+        <p>For that, Cyrpess offers the <code>cy.intercept()</code>command.</p>
+        <p>You can define a route you want Cypress to intercept, give it an alias (using the <code>.as('alias')</code> command), then you can run an action that triggers the request, and finally, wait for it before moving on, using <code>cy.wait('@alias')</code>.</p>
+        <p>Here's a complete example:</p>
+        <code>cy.intercept('GET', 'https://api.example.com/todos/1').as('getTodo')</code>
+        <br>
+        <code>cy.get('Get TODO').click() // this would trigger the above request</code>
+        <br>
+        <code>cy.wait('@getTodo')</code>
+        <br>
+        <p>You could even overwrite the request's response, using a fixture.</p>
+        <p>For example:</p>
+        <code>cy.intercept('GET', 'https://api.example.com/todos/1', { fixture: 'todo' }).as('getTodo')</code>
+        <br>
+        <code>cy.get('Get TODO').click() // this would trigger the above request, but instead of making a real API call, a static file defined instead of the <code>cypress/fixtures/</code> directory would be returned.</code>
+        <br>
+        <code>cy.wait('@getTodo')</code>
+        <br>
+        <br>
         <button>Get TODO</button>
       </div>
     </div>
