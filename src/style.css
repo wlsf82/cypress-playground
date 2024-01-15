@@ -32,9 +32,16 @@ pre {
   border-radius: 5px;
 }
 
+.success {
+  margin-left: 0;
+}
+
 #success {
   color: #4CAF50;
   display: none;
+  background-color: #e6ffed;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 button {
@@ -48,6 +55,10 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+#click button {
+  margin-top: 10px;
 }
 
 textarea {
