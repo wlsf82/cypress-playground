@@ -1,0 +1,129 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.section {
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.section * {
+  margin-left: 10px;
+}
+
+h1, h2, h3 {
+  color: #4CAF50;
+}
+
+.section h2, .section pre {
+  margin-left: 0;
+}
+
+pre {
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#success {
+  color: #4CAF50;
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+textarea {
+  width: 97%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #4CAF50;
+}
+
+#check label {
+  margin-left: 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+#on, #off {
+  margin-right: 5px;
+}
+
+#check-radio p {
+  color: green;
+}
+
+strong {
+  color: #4CAF50;
+}
+
+select {
+  width: 98.5%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9fbe7;
+}
+
+#file-upload {
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .section {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .section * {
+    margin-left: 0;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 8px;
+  }
+
+  select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 8px;
+  }
+
+  pre {
+    font-size: 18px;
+  }
+}

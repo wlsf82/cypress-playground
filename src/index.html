@@ -4,18 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cypress Test Design Masterclass - Talking About Testing</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Cypress Playground - Talking About Testing</title>
   </head>
-  <style>
-    .section {
-      border-bottom: 1px solid black;
-      padding-bottom: 10px;
-    }
-
-    #check-radio p {
-      color: green;
-    }
-  </style>
   <body>
     <div>
       <h1 id="title">Cypress Playground</h1>
@@ -31,9 +22,7 @@
         <div>
           <span id="success" style="display: none;">You've been successfully subscribed to our newsletter.</span>
         </div>
-        <form>
-          <button type="submit">Subscribe</button>
-        </form>
+        <button type="submit">Subscribe</button>
       </div>
       <div id="type" class="section">
         <h2>
@@ -52,6 +41,7 @@
           <label for="signature-checkbox">Signature's preview</label>
           <input id="signature-checkbox" type="checkbox" />
         </div>
+        <br>
         <em id="signature-triggered-by-check"></em>
       </div>
       <div id="check-radio" class="section">
