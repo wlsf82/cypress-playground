@@ -87,7 +87,7 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
     cy.contains('#intercept ul li', 'User ID: ').should('be.visible')
   })
 
-  it('clicks a button and triggers a request', () => {
+  it('clicks a button and triggers a stubbed request', () => {
     const todo = require('../fixtures/todo')
 
     cy.intercept(
