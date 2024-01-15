@@ -132,7 +132,7 @@
         <p>Here's a complete example:</p>
         <code>cy.intercept('GET', 'https://api.example.com/todos/1').as('getTodo')</code>
         <br>
-        <code>cy.get('Get TODO').click() // this would trigger the above request</code>
+        <code>cy.contains('button', 'Get TODO').click() // this would trigger the above request</code>
         <br>
         <code>cy.wait('@getTodo')</code>
         <br>
@@ -140,7 +140,7 @@
         <p>For example:</p>
         <code>cy.intercept('GET', 'https://api.example.com/todos/1', { fixture: 'todo' }).as('getTodo')</code>
         <br>
-        <code>cy.get('Get TODO').click() // this would trigger the above request, but instead of making a real API call, a static file defined instead of the <code>cypress/fixtures/</code> directory would be returned.</code>
+        <code>cy.contains('button', 'Get TODO').click() // this would trigger the above request, but instead of making a real API call, a static file defined instead of the <code>cypress/fixtures/</code> directory would be returned.</code>
         <br>
         <code>cy.wait('@getTodo')</code>
         <br>
