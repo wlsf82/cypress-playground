@@ -81,5 +81,28 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
     cy.get('@todo')
       .its('response.body.id')
       .should('be.equal', 1)
+    cy.contains('#intercept ul li', 'Completed: ').should('be.visible')
+    cy.contains('#intercept ul li', 'ID: ').should('be.visible')
+    cy.contains('#intercept ul li', 'Title: ').should('be.visible')
+    cy.contains('#intercept ul li', 'User ID: ').should('be.visible')
+  })
+
+  it('clicks a button and triggers a request', () => {
+    const todo = require('../fixtures/todo')
+
+    cy.intercept(
+      'GET',
+      'https://jsonplaceholder.typicode.com/todos/1',
+      { fixture: 'todo' }
+      ).as('getTodo')
+    cy.contains('#intercept button', 'Get TODO').click()
+    cy.wait('@getTodo')
+      .as('todo')
+      .its('response.statusCode')
+      .should('be.equal', 200)
+    cy.contains('#intercept ul li', `Completed: ${todo.completed}`).should('be.visible')
+    cy.contains('#intercept ul li', `ID: ${todo.id}`).should('be.visible')
+    cy.contains('#intercept ul li', `Title: ${todo.title}`).should('be.visible')
+    cy.contains('#intercept ul li', `User ID: ${todo.userId}`).should('be.visible')
   })
 })
