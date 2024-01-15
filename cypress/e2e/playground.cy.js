@@ -105,4 +105,10 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
     cy.contains('#intercept ul li', `Completed: ${todo.completed}`).should('be.visible')
     cy.contains('#intercept ul li', `User ID: ${todo.userId}`).should('be.visible')
   })
+
+  it('makes an HTTP request and asserts on the returned status code', () => {
+    cy.request('GET', 'https://jsonplaceholder.typicode.com/todos/1')
+      .its('status')
+      .should('be.equal', 200)
+  })
 })
