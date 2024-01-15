@@ -107,6 +107,29 @@ select {
   margin-top: 10px;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0 !important; /*TODO: Find a way to not need !important*/
+}
+
+ul li {
+  background-color: #f9fbe7;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  color: #333333;
+}
+
+ul li:last-child {
+  margin-bottom: 0;
+}
+
+ul li:hover {
+  background-color: #e6ee9c;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
   .section {
     padding: 10px;

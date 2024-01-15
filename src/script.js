@@ -80,6 +80,26 @@ document.querySelector('#intercept button').addEventListener('click', async () =
   const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
   const body = await response.json()
 
+  const { completed, id, title, userId } = body
+
+  const interceptDiv = document.getElementById('intercept')
+  const unorderedList = document.createElement('ul')
+  const completedListItem = document.createElement('li')
+  const idListItem = document.createElement('li')
+  const titleListItem = document.createElement('li')
+  const userIdListItem = document.createElement('li')
+
+  completedListItem.innerHTML = `Completed: ${completed}`
+  idListItem.innerHTML = `ID: ${id}`
+  titleListItem.innerHTML = `Title: ${title}`
+  userIdListItem.innerHTML = `User ID: ${userId}`
+
+  interceptDiv.appendChild(unorderedList)
+  document.querySelector('#intercept ul').appendChild(completedListItem)
+  document.querySelector('#intercept ul').appendChild(idListItem)
+  document.querySelector('#intercept ul').appendChild(titleListItem)
+  document.querySelector('#intercept ul').appendChild(userIdListItem)
+
   return {
     status: response.status,
     body,
