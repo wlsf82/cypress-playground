@@ -132,7 +132,7 @@
         <p>Here's a complete example:</p>
         <code>cy.intercept('GET', 'https://api.example.com/todos/1').as('getTodo')</code>
         <br>
-        <code>cy.contains('button', 'Get TODO').click() // this would trigger the above request</code>
+        <code>cy.contains('button', 'Get TODO').click() // this would trigger the above request.</code>
         <br>
         <code>cy.wait('@getTodo')</code>
         <br>
