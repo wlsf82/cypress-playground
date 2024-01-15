@@ -76,7 +76,10 @@ document.querySelector('#select-file input[type="file"]')
       `The following file has been selected for upload: <strong>${event.target.files[0].name}</strong>`
   }, false)
 
-document.querySelector('#intercept button').addEventListener('click', async () => {
+document.querySelector('#intercept button')
+  .addEventListener('click', mountTodoList, false)
+
+async function mountTodoList() {
   const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
   const body = await response.json()
 
@@ -89,10 +92,10 @@ document.querySelector('#intercept button').addEventListener('click', async () =
   const titleListItem = document.createElement('li')
   const userIdListItem = document.createElement('li')
 
-  idListItem.innerHTML = `TODO ID: ${id}`
-  titleListItem.innerHTML = `Title: ${title}`
-  completedListItem.innerHTML = `Completed: ${completed}`
-  userIdListItem.innerHTML = `User ID: ${userId}`
+  idListItem.innerText = `TODO ID: ${id}`
+  titleListItem.innerText = `Title: ${title}`
+  completedListItem.innerText = `Completed: ${completed}`
+  userIdListItem.innerText = `User ID: ${userId}`
 
   interceptDiv.appendChild(unorderedList)
   document.querySelector('#intercept ul').appendChild(idListItem)
@@ -100,8 +103,11 @@ document.querySelector('#intercept button').addEventListener('click', async () =
   document.querySelector('#intercept ul').appendChild(completedListItem)
   document.querySelector('#intercept ul').appendChild(userIdListItem)
 
+  document.querySelector('#intercept button')
+    .removeEventListener('click', mountTodoList)
+
   return {
     status: response.status,
     body,
   }
-}, false)
+}
