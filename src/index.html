@@ -128,7 +128,7 @@
         </h2>
         <p>One of the most awesome features of Cypress, is it ability to "listen" to what's going on at the network level.</p>
         <p>For that, Cyrpess offers the<a href="https://on.cypress.io/intercept" target="_blank"><code>cy.intercept()</code></a> command.</p>
-        <p>You can define a route you want Cypress to intercept, give it an alias (using the<code>.as('alias')</code> command), then you can run an action that triggers the request, and finally, wait for it before moving on, using<code>cy.wait('@alias')</code>.</p>
+        <p>You can define a route you want Cypress to intercept, give it an alias (using the<a href="https://on.cypress.io/as" target="_blank"><code>.as('alias')</code></a> command), then you can run an action that triggers the request, and finally, wait for it before moving on, using<a href="https://on.cypress.io/wait" target="_blank"><code>cy.wait('@alias')</code></a>.</p>
         <p>Here's a complete example:</p>
         <code>cy.intercept('GET', 'https://api.example.com/todos/1').as('getTodo')</code>
         <br>
