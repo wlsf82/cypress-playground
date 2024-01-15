@@ -1,5 +1,5 @@
 {
-  "name": "test-design-masterclass",
+  "name": "cypress-playground",
   "version": "1.0.0",
   "description": "Cypress Playground app and tests.",
   "main": "src/index.html",
