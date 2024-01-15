@@ -130,6 +130,16 @@ ul li:hover {
   cursor: pointer;
 }
 
+a {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2E7D32;
+}
+
 @media only screen and (max-width: 600px) {
   .section {
     padding: 10px;
