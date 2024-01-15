@@ -89,15 +89,15 @@ document.querySelector('#intercept button').addEventListener('click', async () =
   const titleListItem = document.createElement('li')
   const userIdListItem = document.createElement('li')
 
-  completedListItem.innerHTML = `Completed: ${completed}`
-  idListItem.innerHTML = `ID: ${id}`
+  idListItem.innerHTML = `TODO ID: ${id}`
   titleListItem.innerHTML = `Title: ${title}`
+  completedListItem.innerHTML = `Completed: ${completed}`
   userIdListItem.innerHTML = `User ID: ${userId}`
 
   interceptDiv.appendChild(unorderedList)
-  document.querySelector('#intercept ul').appendChild(completedListItem)
   document.querySelector('#intercept ul').appendChild(idListItem)
   document.querySelector('#intercept ul').appendChild(titleListItem)
+  document.querySelector('#intercept ul').appendChild(completedListItem)
   document.querySelector('#intercept ul').appendChild(userIdListItem)
 
   return {
