@@ -45,7 +45,8 @@
         <p>For example: <code>cy.get('textarea').type('Cypress is awesome!')</code>.</p>
         <p>If after typing you want to remove the focus from the element you just typed in, Cypress offers the <a href="https://on.cypress.io/blur" target="_blank"><code>.blur()</code></a> command.</p>
         <p>Here's an example of typing then blurring an element: <code>cy.get('textarea').type('Cypress Playground').blur()</code>.</p>
-        <textarea placeholder="Joe Doe"></textarea>
+        <label for="signature-textarea">Sign here</label>
+        <textarea id="signature-textarea" placeholder="Joe Doe"></textarea>
         <p>Signature's preview:</p>
         <em id="signature"></em>
       </div>
@@ -57,7 +58,8 @@
         <p>For that, Cypress offers the <a href="https://on.cypress.io/check" target="_blank"><code>.check()</code></a> and <a href="https://on.cypress.io/uncheck" target="_blank"><code>.uncheck()</code></a> commands.</p>
         <p>Here's an example of checking a checkbox: <code>cy.get('input[type="checkbox"]').check()</code>.</p>
         <p>And here's how you would uncheck it: <code>cy.get('input[type="checkbox"]').uncheck()</code>.</p>
-        <textarea placeholder="Jane Doe"></textarea>
+        <label for="signature-textarea-with-checkbox">Sign here</label>
+        <textarea id="signature-textarea-with-checkbox" placeholder="Jane Doe"></textarea>
         <div>
           <label for="signature-checkbox">Signature's preview</label>
           <input id="signature-checkbox" type="checkbox" />
@@ -89,6 +91,7 @@
         <p>Selection via content: <code>cy.get('select').select('Basic')</code>.</p>
         <p>Selection via value: <code>cy.get('select').select('standard')</code>.</p>
         <p>Selection via index: <code>cy.get('select').select(3)</code>.</p>
+        <label for="selection-type">Select type</label>
         <select name="selection-type" id="selection-type">
           <option disabled selected>Select an option</option>
           <option value="basic">Basic</option>
@@ -100,6 +103,7 @@
         <p>You might also want to interect with multiple options select fields.</p>
         <p>For that, pass to the <code>.select()</code> command an array of values.</p>
         <p>For example: <code>cy.get('select[multiple]').select(['apple', 'cherry'])</code>.</p>
+        <label for="fruit">Select fruit</label>
         <select name="fruit" id="fruit" multiple>
           <option value="apple">Apple</option>
           <option value="banana">Banana</option>

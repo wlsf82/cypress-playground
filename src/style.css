@@ -74,7 +74,7 @@ label {
   color: #4CAF50;
 }
 
-#check label {
+#check label:not(label[for="signature-textarea-with-checkbox"]) {
   margin-left: 0;
 }
 
