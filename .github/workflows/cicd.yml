@@ -1,0 +1,37 @@
+name: CI/CD
+on:
+  push:
+    branches:
+    - main
+jobs:
+  pre-deployment-tests:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run Cypress tests locally 🧪
+        uses: cypress-io/github-action@v6
+  deploy:
+    needs: pre-deployment-tests
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1-node16
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: eu-central-1
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync ./src/ s3://cypress-playground --delete
+  post-deployment-tests:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run Cypress tests in production 🧪
+        uses: cypress-io/github-action@v6
+        with:
+          command: npm run test:prod

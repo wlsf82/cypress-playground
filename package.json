@@ -5,7 +5,9 @@
   "main": "src/index.html",
   "scripts": {
     "cy:open": "cypress open",
-    "test": "cypress run"
+    "cy:open:prod": "cypress open --env environment=prod",
+    "test": "cypress run",
+    "test:prod": "cypress run --env environment=prod"
   },
   "keywords": [
     "Cypress Playground",
