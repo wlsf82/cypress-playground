@@ -1,5 +1,11 @@
 describe('Cypress Playground - Test Design Masterclas TAT', () => {
-  beforeEach(() => cy.visit('./src/index.html'))
+  beforeEach(() => {
+    if (Cypress.env('environment') === 'prod') {
+      cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
+    } else {
+      cy.visit('./src/index.html')
+    }
+  })
 
   it('after visiting a page, asserts some text is visible', () => {
     cy.contains('h1', 'Cypress Playground').should('be.visible')
