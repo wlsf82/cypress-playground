@@ -184,6 +184,37 @@ input[type="range"]::-moz-focus-inner {
   border: 0;
 }
 
+input[type="date"] {
+  appearance: none;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #4CAF50;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+input[type="date"]::-moz-placeholder {
+  color: transparent;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="date"]:focus {
+  border-color: #4CAF50;
+}
+
+
 @media only screen and (max-width: 600px) {
   .section {
     padding: 10px;

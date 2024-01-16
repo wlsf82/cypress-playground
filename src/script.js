@@ -124,3 +124,9 @@ document.querySelector('#input-range input[type="range"]')
     document.querySelector('#input-range p#level-paragraph')
       .innerHTML = `You're on level: <strong>${event.target.value}</strong>`
   }, false)
+
+document.querySelector('#input-date input[type="date"]')
+  .addEventListener('change', event => {
+    document.querySelector('#input-date p#date-paragraph')
+      .innerHTML = `The date you've selected is: <strong>${event.target.value}</strong>`
+  }, false)
