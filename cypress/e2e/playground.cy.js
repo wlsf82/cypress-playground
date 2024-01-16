@@ -130,7 +130,9 @@ describe('Cypress Playground', () => {
   })
 
   it('selects a date and asserts the correct date has been displayed', () => {
-    cy.get('#input-date input[type="date"]').type('2024-01-16').blur()
+    cy.get('#input-date input[type="date"]')
+      .type('2024-01-16')
+      .blur()
 
     cy.contains(
       '#input-date p#date-paragraph',
