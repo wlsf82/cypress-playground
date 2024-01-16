@@ -10,15 +10,24 @@ document.querySelector('#click button').addEventListener('click', event => {
 
 document.querySelector('#type textarea').addEventListener('change', event => {
   document.getElementById('signature').innerText = event.target.value
+  document.getElementById('signature').style.textDecoration = 'underline'
 }, false)
 
 document.querySelector('#check input[type="checkbox"]')
   .addEventListener('change', event => {
     const signature = document.querySelector('#check textarea').value
 
-    event.target.checked ?
-      document.getElementById('signature-triggered-by-check').innerText = signature :
+    if (event.target.checked) {
+      document.getElementById('signature-triggered-by-check').innerText = signature
+      document.getElementById('signature-triggered-by-check')
+        .style
+        .textDecoration = 'underline'
+    } else {
       document.getElementById('signature-triggered-by-check').innerText = ''
+      document.getElementById('signature-triggered-by-check')
+        .style
+        .textDecoration = 'none'
+    }
   }, false)
 
 document.querySelector('#check-radio input[type="radio"][value="on"]')
@@ -44,13 +53,13 @@ document.querySelector('#select select[name="selection-type"]')
 
     switch (selectedValue) {
       case 'basic':
-        selectedTypeParagraph.innerText = `You've selected: ${selectedValue.toUpperCase()}`
+        selectedTypeParagraph.innerHTML = `You've selected: <strong>${selectedValue.toUpperCase()}</strong>`
         break
       case 'standard':
-        selectedTypeParagraph.innerText = `You've selected: ${selectedValue.toUpperCase()}`
+        selectedTypeParagraph.innerHTML = `You've selected: <strong>${selectedValue.toUpperCase()}</strong>`
         break
       case 'vip':
-        selectedTypeParagraph.innerText = `You've selected: ${selectedValue.toUpperCase()}`
+        selectedTypeParagraph.innerHTML = `You've selected: <strong>${selectedValue.toUpperCase()}</strong>`
         break
       default:
         selectedTypeParagraph.innerText = "You haven't selected a type yet."
