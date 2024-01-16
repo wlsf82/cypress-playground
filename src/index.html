@@ -158,6 +158,21 @@
         <p>For that, you could combine the<a href="https://on.cypress.io/its" target="_blank"><code>.its()</code></a> and<a href="https://on.cypress.io/should" target="_blank"><code>.should()</code></a> commands.</p>
         <p>For example:<code>cy.request('GET', 'https://api.example.com/todos/1').its('status').should('be.equal', 200)</code>.</p>
       </div>
+      <div id="input-range" class="section">
+        <h2>
+          <pre>.invoke()</pre>
+          <span>and</span>
+          <pre>.trigger()</pre>
+        </h2>
+        <p>Another element you might have to interact with when testing web apps is the input of type range.</p>
+        <p>To deal with such an element, you can combine two Cypress features.</p>
+        <p>You can use the<a href="https://on.cypress.io/invoke" target="_blank"><code>.invoke()</code></a> command to set the input's value.</p>
+        <p>Then, you can use the<a href="https://on.cypress.io/trigger" target="_blank"><code>.trigger()</code></a> command to trigger the value's change.</p>
+        <p>For example:<code>cy.get('input[type="range"]').invoke('val', 5).trigger('change')</code>.</p>
+        <label for="level">Level</label>
+        <input id="level" type="range" min="1" max="10" value="1">
+        <p id="level-paragraph"></p>
+      </div>
     </div>
     <footer>
       <p>This app was made with a lot of 💚 by <a href="https://walmyr.dev" target="_blank">Walmyr</a>.</p>

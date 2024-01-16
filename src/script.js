@@ -109,3 +109,9 @@ async function mountTodoList() {
     body,
   }
 }
+
+document.querySelector('#input-range input[type="range"]')
+  .addEventListener('change', event => {
+    document.querySelector('#input-range p#level-paragraph')
+      .innerHTML = `You're on level: <strong>${event.target.value}</strong>`
+  }, false)

@@ -111,4 +111,15 @@ describe('Cypress Playground - Test Design Masterclas TAT', () => {
       .its('status')
       .should('be.equal', 200)
   })
+
+  Cypress._.times(10, index => {
+    it(`selects ${index + 1} out of 10`, () => {
+      cy.get('#input-range input[type="range"]')
+        .invoke('val', index + 1)
+        .should('have.value', index + 1)
+        .trigger('change')
+
+      cy.contains('#input-range p', `You're on level: ${index + 1}`)
+    })
+  })
 })
