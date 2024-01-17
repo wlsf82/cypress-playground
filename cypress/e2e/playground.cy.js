@@ -158,14 +158,14 @@ describe('Cypress Playground', () => {
 
   it('types a password without leaking it, shows it, and hides it again', () => {
     cy.get('#password-input input[type="password"]')
-      .type(Cypress.env('password'), { log: false })
+      .type(Cypress.env('PASSWORD'), { log: false })
 
     cy.get('#password-input input[type="checkbox"').check()
 
     cy.get('#password-input input[type="password"]').should('not.exist')
     cy.get('#password-input input[type="text"]')
       .should('be.visible')
-      .and('have.value', Cypress.env('password'))
+      .and('have.value', Cypress.env('PASSWORD'))
 
     cy.get('#password-input input[type="checkbox"').uncheck()
 
