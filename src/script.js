@@ -130,3 +130,10 @@ document.querySelector('#input-date input[type="date"]')
     document.querySelector('#input-date p#date-paragraph')
       .innerHTML = `The date you've selected is: <strong>${event.target.value}</strong>`
   }, false)
+
+document.querySelector('#password-input input[type="checkbox"]')
+  .addEventListener('change', event => {
+    event.target.checked ?
+      document.querySelector('#password-input input[type="password"]').type = 'text' :
+      document.querySelector('#password-input input[type="text"]').type = 'password'
+  }, false)

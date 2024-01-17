@@ -139,4 +139,21 @@ describe('Cypress Playground', () => {
       "The date you've selected is: 2024-01-16"
     ).should('be.visible')
   })
+
+  it('types a password without leaking it, shows it, and hides it again', () => {
+    cy.get('#password-input input[type="password"]')
+      .type(Cypress.env('password'), { log: false })
+
+    cy.get('#password-input input[type="checkbox"').check()
+
+    cy.get('#password-input input[type="password"]').should('not.exist')
+    cy.get('#password-input input[type="text"]')
+      .should('be.visible')
+      .and('have.value', Cypress.env('password'))
+
+    cy.get('#password-input input[type="checkbox"').uncheck()
+
+    cy.get('#password-input input[type="text"]').should('not.exist')
+    cy.get('#password-input input[type="password"]').should('be.visible')
+  })
 })

@@ -79,7 +79,7 @@ label {
 }
 
 input[type="checkbox"] {
-  margin-right: 5px;
+  margin-left: 10px;
 }
 
 #on, #off {
@@ -214,6 +214,27 @@ input[type="date"]:focus {
   border-color: #4CAF50;
 }
 
+#password-input input[type="password"], #password-input input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#password-input input[type="password"]:focus, #password-input input[type="text"]:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px lightgray;
+}
+
+#password-input div label, #password-input div input[type="password"], #password-input div input[type="text"] {
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+#password-input input[type="checkbox"] {
+  margin-top: 20px;
+}
 
 @media only screen and (max-width: 600px) {
   h1 {
@@ -242,6 +263,14 @@ input[type="date"]:focus {
     width: calc(100% - 20px);
     padding: 8px;
     margin-top: 8px;
+  }
+
+  #password-input input[type="password"], #password-input, input[type="text"] {
+    margin-top: 10px;
+  }
+
+  #password-input div {
+    margin-top: 20px;
   }
 
   select {
