@@ -244,6 +244,10 @@ input[type="date"]:focus {
   margin-top: 20px;
 }
 
+footer p {
+  text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 26px;
