@@ -277,10 +277,6 @@ input[type="date"]:focus {
     margin-top: 10px;
   }
 
-  #password-input div {
-    margin-top: 20px;
-  }
-
   select {
     width: calc(100% - 20px);
     padding: 8px;
