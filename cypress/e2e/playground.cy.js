@@ -156,4 +156,8 @@ describe('Cypress Playground', () => {
     cy.get('#password-input input[type="text"]').should('not.exist')
     cy.get('#password-input input[type="password"]').should('be.visible')
   })
+
+  it('count the number of animals in a list', () => {
+    cy.get('#should-have-length ul li').should('have.length', 5)
+  })
 })
