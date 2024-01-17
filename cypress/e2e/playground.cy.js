@@ -112,6 +112,22 @@ describe('Cypress Playground', () => {
     cy.contains('#intercept ul li', `User ID: ${todo.userId}`).should('be.visible')
   })
 
+  it('clicks a button and simulate an API failure', () => {
+    cy.intercept(
+      'GET',
+      'https://jsonplaceholder.typicode.com/todos/1',
+      { statusCode: 500 }
+      ).as('getTodo')
+    cy.contains('#intercept button', 'Get TODO').click()
+    cy.wait('@getTodo')
+      .its('response.statusCode')
+      .should('be.equal', 500)
+    cy.contains(
+      '#intercept .error span',
+      'Oops, something went wrong. Refresh the page and try again.'
+    ).should('be.visible')
+  })
+
   it('makes an HTTP request and asserts on the returned status code', () => {
     cy.request('GET', 'https://jsonplaceholder.typicode.com/todos/1')
       .its('status')

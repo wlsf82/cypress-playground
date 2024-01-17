@@ -44,6 +44,14 @@ pre {
   border-radius: 8px;
 }
 
+.error {
+  margin-top: 10px;
+  color: #fff;
+  background-color: lightcoral;
+  padding: 10px;
+  border-radius: 8px;
+}
+
 button {
   background-color: #4CAF50;
   color: #fff;

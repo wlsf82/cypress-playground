@@ -147,8 +147,12 @@
         <code>cy.contains('button', 'Get TODO').click() // this would trigger the above request, but instead of making a real API call, a static file defined instead of the <code>cypress/fixtures/</code> directory would be returned.</code>
         <br>
         <code>cy.wait('@getTodo')</code>
-        <br>
-        <br>
+        <p>With the <code>cy.intercept()</code> command, you could even simulate an API failure.</p>
+        <p>For example: <code>cy.intercept('GET', 'https://api.example.com/todos/1', { statusCode: 500 }).as('getTodo')</code>.</p>
+        <p>Then, you could assert that it has really failed.</p>
+        <p>For example: <code>cy.wait('@getTodo').its('response.statusCode').should('be.equal', 500)</code>.</p>
+        <p>And maybe, even assert that certain fallback element has been displayed.</p>
+        <p>For example: <code>cy.contains('.error', 'Oops, something went wrong.').should('be.visible')</code>.</p>
         <button>Get TODO</button>
       </div>
       <div id="request" class="section">
