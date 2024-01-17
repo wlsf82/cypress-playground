@@ -8,5 +8,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Run Cypress tests locally 🧪
         uses: cypress-io/github-action@v6
+        with:
+          record: true
         env:
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
