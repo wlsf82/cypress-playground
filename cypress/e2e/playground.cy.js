@@ -128,6 +128,20 @@ describe('Cypress Playground', () => {
     ).should('be.visible')
   })
 
+  it('clicks a button and simulate a network failure', () => {
+    cy.intercept(
+      'GET',
+      'https://jsonplaceholder.typicode.com/todos/1',
+      { forceNetworkError: true }
+      ).as('getTodo')
+    cy.contains('#intercept button', 'Get TODO').click()
+    cy.wait('@getTodo')
+    cy.contains(
+      '#intercept .error span',
+      'Oops, something went wrong. Check your internet connection, refresh the page, and try again.'
+    ).should('be.visible')
+  })
+
   it('makes an HTTP request and asserts on the returned status code', () => {
     cy.request('GET', 'https://jsonplaceholder.typicode.com/todos/1')
       .its('status')

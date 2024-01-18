@@ -88,7 +88,8 @@ document.querySelector('#intercept button')
 
 async function mountTodoList() {
   const interceptDiv = document.getElementById('intercept')
-  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
     .then(async response => {
       if (response.ok) {
         const body = await response.json()
@@ -131,6 +132,18 @@ async function mountTodoList() {
           .removeEventListener('click', mountTodoList)
       }
     })
+  } catch {
+    const errorDiv = document.createElement('div')
+    const errorSpan = document.createElement('span')
+
+    errorDiv.className = 'error'
+    errorSpan.innerText = 'Oops, something went wrong. Check your internet connection, refresh the page, and try again.'
+    interceptDiv.appendChild(errorDiv)
+    errorDiv.appendChild(errorSpan)
+
+    document.querySelector('#intercept button')
+      .removeEventListener('click', mountTodoList)
+  }
 }
 
 document.querySelector('#input-range input[type="range"]')
