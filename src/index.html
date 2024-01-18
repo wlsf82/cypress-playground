@@ -153,6 +153,12 @@
         <p>For example: <code>cy.wait('@getTodo').its('response.statusCode').should('be.equal', 500)</code>.</p>
         <p>And maybe, even assert that certain fallback element has been displayed.</p>
         <p>For example: <code>cy.contains('.error', 'Oops, something went wrong.').should('be.visible')</code>.</p>
+        <p>Finally, with the <code>cy.intercept()</code>command, you could force a network error, to test how your web app would behave if there were no internet available, for instance.</p>
+        <p>For example: <code>cy.intercept('GET', 'https://api.example.com/todos/1', { forceNetworkError: true }).as('getTodo')</code>.</p>
+        <p>Then, you could wait for such a failure.</p>
+        <p>For example: <code>cy.wait('@getTodo')</code>.</p>
+        <p>And then, you could even assert that certain fallback element has been displayed.</p>
+        <p>For example: <code>cy.contains('.error', "Oops, it seems you don't have internet connection.").should('be.visible')</code>.</p>
         <button>Get TODO</button>
       </div>
       <div id="request" class="section">
