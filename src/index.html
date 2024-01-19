@@ -172,9 +172,7 @@
       </div>
       <div id="input-range" class="section">
         <h2>
-          <pre>.invoke()</pre>
-          <span>and</span>
-          <pre>.trigger()</pre>
+          <pre>.invoke().trigger()</pre>
         </h2>
         <p>Another element you might have to interact with when testing web apps is the input of type range.</p>
         <p>To deal with such an element, you can combine two Cypress features.</p>
@@ -187,7 +185,7 @@
       </div>
       <div id="input-date" class="section">
         <h2>
-          <pre>.type('yyyy-mm-dd')</pre>
+          <pre>.type('yyyy-mm-dd').blur()</pre>
         </h2>
         <p>Another element you might have to interact with when testing web apps is the input of type date.</p>
         <p>To deal with such an element, you can combine two Cypress features.</p>
@@ -224,7 +222,7 @@
     </div>
     <div id="should-have-length" class="section">
       <h2>
-        <pre>.should('have.length')</pre>
+        <pre>.should('have.length', n)</pre>
       </h2>
       <p>One common challenge when testing web applications is to assert on the number of specific elements.</p>
       <p>Imagine you have a unordered list, and you want to assert that it has a specific number of list items.</p>
