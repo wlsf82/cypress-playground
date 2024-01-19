@@ -187,12 +187,13 @@
       </div>
       <div id="input-date" class="section">
         <h2>
-          <pre>cy.get('input[type="date"]').type('yyyy-mm-dd')</pre>
+          <pre>.type('yyyy-mm-dd')</pre>
         </h2>
         <p>Another element you might have to interact with when testing web apps is the input of type date.</p>
         <p>To deal with such an element, you can combine two Cypress features.</p>
         <p>You can use the <code>.type()</code> command to set the input's value.</p>
-        <p>Then, you can use the <code>.blur()</code></a> command to take the focus out of the element, for instace.</p>
+        <p>Then, you can use the <a href="https://on.cypress.io/blur" target="_blank"><code>.blur()</code></a> command to take the focus out of the element, for instace.</p>
+        <p>Note that the <code>.type()</code> command expects the date to be in the <code>yyyy-mm-dd</code> format.</p>
         <p>For example: <code>cy.get('input[type="date"]').type('2024-01-16').blur()</code>.</p>
         <label for="date">Select a date</label>
         <input type="date" name="date" id="date">
