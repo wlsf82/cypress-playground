@@ -26,8 +26,8 @@ describe('Cypress Playground', () => {
     ).should('not.be.visible')
   })
 
-  it('types in an input which "signs" a form, then blurs it to see the result', () => {
-    cy.get('#type textarea').type('Mad Max').blur()
+  it("types in an input which 'signs' a form, then asserts it's signed", () => {
+    cy.get('#type textarea').type('Mad Max')
     cy.contains('#type em', 'Mad Max').should('be.visible')
   })
 
