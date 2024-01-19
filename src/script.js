@@ -164,3 +164,14 @@ document.querySelector('#password-input input[type="checkbox"]')
       document.querySelector('#password-input input[type="password"]').type = 'text' :
       document.querySelector('#password-input input[type="text"]').type = 'password'
   }, false)
+
+window.onload = () => {
+  const formatedTimestamp = ()=> {
+    const d = new Date()
+    const date = d.toISOString().split('T')[0]
+    return date
+  }
+
+  document.querySelector('#date-section #date-section-paragraph')
+    .innerHTML = `Date: <strong>${formatedTimestamp()}</strong>`
+}

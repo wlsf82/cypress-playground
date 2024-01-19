@@ -1,5 +1,9 @@
 describe('Cypress Playground', () => {
   beforeEach(() => {
+    const date = new Date(Date.UTC(1982, 3, 15))
+
+    cy.clock(date)
+
     if (Cypress.env('environment') === 'prod') {
       cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
     } else {
@@ -189,5 +193,12 @@ describe('Cypress Playground', () => {
 
   it('count the number of animals in a list', () => {
     cy.get('#should-have-length ul li').should('have.length', 5)
+  })
+
+  it("freezes the browser clock and asserts the frozen date is displayed", () => {
+    cy.contains(
+      '#date-section #date-section-paragraph',
+      'Date: 1982-04-15'
+    )
   })
 })

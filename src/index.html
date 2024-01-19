@@ -238,6 +238,28 @@
         <li>Dog</li>
       </ul>
     </div>
+    <div id="date-section" class="section">
+      <h2>
+        <pre>cy.clock()</pre>
+      </h2>
+      <p>Sometimes, web apps show dynamic data, such as the current date.</p>
+      <p>If you want to assert on such data, you would want to freeze the date so your tests can provide you with deterministic results.</p>
+      <p>For that, Cypress offers the <a href="https://on.cypress.io/clock" target="_blank"><code>cy.clock()</code></a> command.</p>
+      <p>For example:</p>
+      <code>beforeEach(() => {</code>
+      <br>
+      <code>  const now = new Date(2024, 3, 15) // month is 0-indexed</code>
+      <br>
+      <code>  cy.clock(now)</code>
+      <br>
+      <code>  cy.visit('https://example.com')</code>
+      <br>
+      <code>})</code>
+      <br>
+      <p>Then, you could assert that the frozen date is displayed, for instance.</p>
+      <p>Like this: <code>cy.contains('p', '2024-04-15').should('be.visible')</code>.</p>
+      <p id="date-section-paragraph"></p>
+    </div>
     <footer>
       <p>This app was made with a lot of 💚 by <a href="https://walmyr.dev" target="_blank">Walmyr</a>.</p>
     </footer>
