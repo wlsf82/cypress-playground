@@ -8,7 +8,7 @@ document.querySelector('#click button').addEventListener('click', event => {
   }, 3000)
 }, false)
 
-document.querySelector('#type textarea').addEventListener('change', event => {
+document.querySelector('#type textarea').addEventListener('input', event => {
   document.getElementById('signature').innerText = event.target.value
   document.getElementById('signature').style.textDecoration = 'underline'
 }, false)
