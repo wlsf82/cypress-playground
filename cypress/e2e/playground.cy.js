@@ -117,9 +117,9 @@ describe('Cypress Playground', () => {
       'GET',
       'https://jsonplaceholder.typicode.com/todos/1',
       { statusCode: 500 }
-      ).as('getTodo')
+      ).as('serverFailure')
     cy.contains('#intercept button', 'Get TODO').click()
-    cy.wait('@getTodo')
+    cy.wait('@serverFailure')
       .its('response.statusCode')
       .should('be.equal', 500)
     cy.contains(
@@ -133,9 +133,9 @@ describe('Cypress Playground', () => {
       'GET',
       'https://jsonplaceholder.typicode.com/todos/1',
       { forceNetworkError: true }
-      ).as('getTodo')
+      ).as('networkError')
     cy.contains('#intercept button', 'Get TODO').click()
-    cy.wait('@getTodo')
+    cy.wait('@networkError')
     cy.contains(
       '#intercept .error span',
       'Oops, something went wrong. Check your internet connection, refresh the page, and try again.'
