@@ -205,8 +205,8 @@
       <p>Sometimes, when testing web apps, we need to input some sensitive data.</p>
       <p>However, it's not recommended to version such data, or even let it leak, hardcoding it in the test file.</p>
       <p>To deal with that, Cypress offers a few options.</p>
-      <p>First, you can create a file called <code>cypress.env.json</code> and add it to the <code>.gitignore</code> file, so it won't be versioned.</p>
-      <p>Then, you can use the <code>Cypress.env()</code> command to retrieve information from such a file.</p>
+      <p>First, you can create a file called <a href="https://docs.cypress.io/guides/guides/environment-variables#Option-2-cypressenvjson" target="_blank"><code>cypress.env.json</code></a> and add it to the <code>.gitignore</code> file, so it won't be versioned.</p>
+      <p>Then, you can use the <a href="https://docs.cypress.io/api/cypress-api/env" target="_blank"><code>Cypress.env()</code></a> command to retrieve information from such a file.</p>
       <p>For example: <code>cy.get('input[type="password"]').type(Cypress.env('password'))</code>.</p>
       <p>With the above code example, you'd retrieve the value defined for the <code>password</code> property of the <code>cypress.env.json</code> file.</p>
       <p>Even so, with the above code example, although the password would not be hardcoded in the test file, it would still leak into the Cypress command logs.</p>
