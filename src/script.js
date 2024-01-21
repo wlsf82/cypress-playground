@@ -186,6 +186,7 @@ window.onload = () => {
 
     if (typedCode === actualCode) {
       document.querySelector('#copy-paste .success').style.display = 'block'
+      document.querySelector('#copy-paste input#code').value = ''
       setTimeout(() => {
         document.querySelector('#copy-paste .success').style.display = 'none'
       }, 3000)
