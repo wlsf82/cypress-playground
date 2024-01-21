@@ -201,4 +201,40 @@ describe('Cypress Playground', () => {
       'Date: 1982-04-15'
     )
   })
+
+  it('copies the code, types it, submits it, then asserts on the success message', () => {
+    cy.clock()
+    cy.get('#copy-paste span#timestamp')
+      .then(element => {
+        const code = element[0].innerText
+
+        cy.get('#copy-paste input[type="number"]').type(code)
+        cy.contains('#copy-paste button', 'Submit').click()
+
+        cy.contains('#copy-paste span', "Congrats! You've entered the correct code.")
+          .should('be.visible')
+        cy.tick(3000)
+
+        cy.contains('#copy-paste span', "Congrats! You've entered the correct code.")
+          .should('not.be.visible')
+      })
+  })
+
+  it('copies the code, types it + 1, submits it, then asserts on the error message', () => {
+    cy.clock()
+    cy.get('#copy-paste span#timestamp')
+      .then(element => {
+        const code = element[0].innerText
+
+        cy.get('#copy-paste input[type="number"]').type(`${code}1`)
+        cy.contains('#copy-paste button', 'Submit').click()
+
+        cy.contains('#copy-paste span', "The provided code isn't correct. Please, try again.")
+          .should('be.visible')
+        cy.tick(3000)
+
+        cy.contains('#copy-paste span', "The provided code isn't correct. Please, try again.")
+          .should('not.be.visible')
+      })
+  })
 })

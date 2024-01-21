@@ -248,17 +248,52 @@
       <p>For example:</p>
       <code>beforeEach(() => {</code>
       <br>
-      <code>  const now = new Date(2024, 3, 15) // month is 0-indexed</code>
+      <code>&nbsp;&nbsp;const now = new Date(2024, 3, 15) // month is 0-indexed</code>
       <br>
-      <code>  cy.clock(now)</code>
+      <code>&nbsp;&nbsp;cy.clock(now)</code>
       <br>
-      <code>  cy.visit('https://example.com')</code>
+      <code>&nbsp;&nbsp;cy.visit('https://example.com')</code>
       <br>
       <code>})</code>
       <br>
       <p>Then, you could assert that the frozen date is displayed, for instance.</p>
       <p>Like this: <code>cy.contains('p', '2024-04-15').should('be.visible')</code>.</p>
       <p id="date-section-paragraph"></p>
+    </div>
+    <div id="copy-paste" class="section">
+      <h2>
+        <pre>.then()</pre>
+      </h2>
+      <p>Sometimes, you need to input the value of one element into another.</p>
+      <p>For that, Cypress offers the <a href="https://on.cypress.io/then" target="_blank"><code>.then()</code></a> command.</p>
+      <p>The <code>.then()</code> command enables you to work with the subject yielded from the previous command.</p>
+      <p>For example:</p>
+      <code>cy.get('#some-element')</code>
+      <br>
+      <code>&nbsp;&nbsp;.then(element => {</code>
+      <br>
+      <code>&nbsp;&nbsp;&nbsp;&nbsp;const value = element[0].innerText</code>
+      <br>
+      <code>&nbsp;&nbsp;&nbsp;&nbsp;cy.get('input[type="text"]').type(value)</code>
+      <br>
+      <code>&nbsp;&nbsp;})</code>
+      <br>
+      <br>
+      <div>
+        <label for="timestamp">Your code is:</label>
+        <span id="timestamp"></span>
+      </div>
+      <div class="success" style="display: none;">
+        <span>Congrats! You've entered the correct code.</span>
+      </div>
+      <div class="error" style="display: none;">
+        <span>The provided code isn't correct. Please, try again.</span>
+      </div>
+      <form action="submit">
+        <label for="code">Type your code here:</label>
+        <input id="code" type="number">
+        <button>Submit</button>
+      </form>
     </div>
     <footer>
       <p>This app was made with a lot of 💚 by <a href="https://walmyr.dev" target="_blank">Walmyr</a>.</p>

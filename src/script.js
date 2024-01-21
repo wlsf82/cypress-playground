@@ -166,12 +166,34 @@ document.querySelector('#password-input input[type="checkbox"]')
   }, false)
 
 window.onload = () => {
+  const d = new Date()
+  const timestamp = d.getTime()
   const formatedTimestamp = ()=> {
-    const d = new Date()
     const date = d.toISOString().split('T')[0]
     return date
   }
 
   document.querySelector('#date-section #date-section-paragraph')
     .innerHTML = `Date: <strong>${formatedTimestamp()}</strong>`
+
+  document.querySelector('#copy-paste span#timestamp').innerText = timestamp
+
+  document.querySelector('#copy-paste button').addEventListener('click', event => {
+    event.preventDefault()
+
+    const typedCode = document.querySelector('#copy-paste input#code').value
+    const actualCode = document.querySelector('#copy-paste span#timestamp').innerText
+
+    if (typedCode === actualCode) {
+      document.querySelector('#copy-paste .success').style.display = 'block'
+      setTimeout(() => {
+        document.querySelector('#copy-paste .success').style.display = 'none'
+      }, 3000)
+    } else {
+      document.querySelector('#copy-paste .error').style.display = 'block'
+      setTimeout(() => {
+        document.querySelector('#copy-paste .error').style.display = 'none'
+      }, 3000)
+    }
+  })
 }

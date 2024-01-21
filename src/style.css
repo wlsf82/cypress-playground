@@ -36,7 +36,7 @@ pre {
   margin-left: 0;
 }
 
-#success {
+#click #success {
   color: #4CAF50;
   display: none;
   background-color: #e6ffed;
@@ -44,7 +44,7 @@ pre {
   border-radius: 8px;
 }
 
-.error {
+#intercept .error, #click .error {
   margin-top: 10px;
   color: #fff;
   background-color: lightcoral;
@@ -222,14 +222,14 @@ input[type="date"]:focus {
   border-color: #4CAF50;
 }
 
-#password-input input[type="password"], #password-input input[type="text"] {
+#password-input input[type="password"], #password-input input[type="text"], #copy-paste input[type="number"] {
   padding: 8px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-#password-input input[type="password"]:focus, #password-input input[type="text"]:focus {
+#password-input input[type="password"]:focus, #password-input input[type="text"]:focus, #copy-paste input[type="number"]:focus {
   outline: none;
   border-color: #4CAF50;
   box-shadow: 0 0 5px lightgray;
@@ -242,6 +242,39 @@ input[type="date"]:focus {
 
 #password-input input[type="checkbox"] {
   margin-top: 20px;
+}
+
+#copy-paste div {
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+
+#copy-paste form * {
+  margin-left: 0;
+}
+
+#copy-paste .success {
+  margin-left: 10px;
+  color: #4CAF50;
+  background-color: #e6ffed;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#copy-paste .error {
+  margin-left: 10px;
+  color: #fff;
+  background-color: lightcoral;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#copy-paste span {
+  margin-left: 0;
+}
+
+#copy-paste button {
+  margin-left: 10px;
 }
 
 footer p {
@@ -289,5 +322,13 @@ footer p {
 
   pre {
     font-size: 18px;
+  }
+
+  #copy-paste input[type="number"] {
+    margin-top: 10px;
+  }
+
+  #copy-paste .success, #copy-paste .error {
+    margin-left: 0;
   }
 }
