@@ -6,9 +6,9 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:open:prod": "cypress open --env environment=prod",
-    "test": "cypress run",
-    "test:prod": "cypress run --env environment=prod",
-    "test:prod:cloud": "cypress run --record --tag 'prod' --env environment=prod"
+    "test": "cypress run --browser chrome",
+    "test:prod": "cypress run --browser chrome --env environment=prod",
+    "test:prod:cloud": "cypress run --browser chrome --record --tag 'prod' --env environment=prod"
   },
   "keywords": [
     "Cypress Playground",

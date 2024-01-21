@@ -9,6 +9,7 @@ jobs:
       - name: Run Cypress tests locally 🧪
         uses: cypress-io/github-action@v6
         with:
+          browser: chrome
           record: true
           tag: local
         env:
