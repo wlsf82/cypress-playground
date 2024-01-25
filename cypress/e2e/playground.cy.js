@@ -146,6 +146,34 @@ describe('Cypress Playground', () => {
     ).should('be.visible')
   })
 
+  it('simulates the internet going "down" then back "up"', () => {
+    cy.intercept(
+      'GET',
+      'https://jsonplaceholder.typicode.com/todos/1',
+      { forceNetworkError: true }
+      ).as('networkError')
+    cy.contains('#intercept button', 'Get TODO').click()
+    cy.wait('@networkError')
+    cy.contains(
+      '#intercept .error span',
+      'Oops, something went wrong. Check your internet connection, refresh the page, and try again.'
+    ).should('be.visible')
+    cy.reload()
+    cy.intercept(
+      'GET',
+      'https://jsonplaceholder.typicode.com/todos/1',
+      { middleware: true }
+    ).as('getTodo')
+    cy.contains('#intercept button', 'Get TODO').click()
+    cy.wait('@getTodo')
+      .its('response.statusCode')
+      .should('be.equal', 200)
+    cy.contains('#intercept ul li', 'TODO ID: ').should('be.visible')
+    cy.contains('#intercept ul li', 'Title: ').should('be.visible')
+    cy.contains('#intercept ul li', 'Completed: ').should('be.visible')
+    cy.contains('#intercept ul li', 'User ID: ').should('be.visible')
+  })
+
   it('makes an HTTP request and asserts on the returned status code', () => {
     cy.request('GET', 'https://jsonplaceholder.typicode.com/todos/1')
       .its('status')
