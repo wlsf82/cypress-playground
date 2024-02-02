@@ -174,7 +174,7 @@ window.onload = () => {
   }
 
   document.querySelector('#date-section #date-section-paragraph')
-    .innerHTML = `Date: <strong>${formatedTimestamp()}</strong>`
+    .innerHTML = `Current date: <strong>${formatedTimestamp()}</strong>`
 
   document.querySelector('#copy-paste span#timestamp').innerText = timestamp
 

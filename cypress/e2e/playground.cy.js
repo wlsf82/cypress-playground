@@ -226,7 +226,7 @@ describe('Cypress Playground', () => {
   it("freezes the browser clock and asserts the frozen date is displayed", () => {
     cy.contains(
       '#date-section #date-section-paragraph',
-      'Date: 1982-04-15'
+      'Current date: 1982-04-15'
     )
   })
 

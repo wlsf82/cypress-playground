@@ -83,7 +83,7 @@
         </h2>
         <p>Another element we usually need to intereact with in web apps is the dropdown select field.</p>
         <p>For that, Cypress offers the <a href="https://on.cypress.io/select" target="_blank"><code>.select()</code></a> command.</p>
-        <p>Simply chain the <code>.select()</code>command to a <code>select</code>HTML element, then pass to it the option you want to select.</p>
+        <p>Simply chain the <code>.select()</code>command to a <code>select</code> HTML element, then pass to it the option you want to select.</p>
         <p>The option can be chosen via its <code>content</code>, <code>value</code>, or <code>index</code>.</p>
         <p>Examples:</p>
         <p>Selection via content: <code>cy.get('select').select('Basic')</code>.</p>
@@ -115,7 +115,7 @@
         <h2>
           <pre>.selectFile()</pre>
         </h2>
-        <p>To select a file into a input of type file, Cypress offers the <a href="https://on.cypress.io/selectfile" target="_blank"><code>.selectFile()</code></a> command.</p>
+        <p>To select a file into an input of type file, Cypress offers the <a href="https://on.cypress.io/selectfile" target="_blank"><code>.selectFile()</code></a> command.</p>
         <p>Simply pass to it the relative path of the file you want to select, based on the <code>cypress.config.js</code> file.</p>
         <p>For example: <code>cy.get('input[type="file"]').select('cypress/fixtures/example.json')</code>.</p>
         <label for="file-upload">Attach a file</label>
@@ -142,7 +142,7 @@
         <p>For example:</p>
         <code>cy.intercept('GET', 'https://api.example.com/todos/1', { fixture: 'todo' }).as('getTodo')</code>
         <br>
-        <code>cy.contains('button', 'Get TODO').click() // this would trigger the above request, but instead of making a real API call, a static file defined instead of the <code>cypress/fixtures/</code> directory would be returned.</code>
+        <code>cy.contains('button', 'Get TODO').click() // this would trigger the above request, but instead of making a real API call, a static file defined inside of the <code>cypress/fixtures/</code> directory would be returned.</code>
         <br>
         <code>cy.wait('@getTodo')</code>
         <p>With the <code>cy.intercept()</code> command, you could even simulate an API failure.</p>
