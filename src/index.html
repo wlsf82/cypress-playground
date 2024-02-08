@@ -18,6 +18,15 @@
         <p>For that, Cypress offers the <a href="https://on.cypress.io/visit" target="_blank"><code>cy.visit()</code></a> command.</p>
         <p>To visit a web page with Cypress, simply pass the desired URL as a string to the <code>cy.visit()</code> command.</p>
         <p>For example: <code>cy.visit('https://google.com')</code>.</p>
+        <p>A good place to put the <code>cy.visit()</code> command is inside of the callback function of the <code>beforeEach()</code> <a href="https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Hooks" target="_blank">hook</a>.</p>
+        <p>For example:</p>
+        <code>beforeEach(() => {</code>
+        <br>
+        <code>&nbsp;&nbsp;cy.visit('https://example.com')</code>
+        <br>
+        <code>})</code>
+        <br>
+        <p>This way, you won't need to repeat the <code>cy.visit()</code> command inside each test case since it run before each <code>it</code> block.</p>
       </div>
       <div id="click" class="section">
         <h2>
