@@ -126,7 +126,12 @@
         </h2>
         <p>To select a file into an input of type file, Cypress offers the <a href="https://on.cypress.io/selectfile" target="_blank"><code>.selectFile()</code></a> command.</p>
         <p>Simply pass to it the relative path of the file you want to select, based on the <code>cypress.config.js</code> file.</p>
-        <p>For example: <code>cy.get('input[type="file"]').select('cypress/fixtures/example.json')</code>.</p>
+        <p>For example:</p>
+        <code>cy.get('input[type="file"]')</code>
+        <br>
+        <code>&nbsp;&nbsp;.selectFile('cypress/fixtures/example.json')</code>
+        <br>
+        <br>
         <label for="file-upload">Attach a file</label>
         <input id="file-upload" type="file" />
         <p id="file"></p>
@@ -177,7 +182,12 @@
         <p>For example: <code>cy.request('GET', 'https://api.example.com/todos/1')</code>.</p>
         <p>After making the request, you could even run an assertion, to ensure it returned the correct status code.</p>
         <p>For that, you could combine the <a href="https://on.cypress.io/its" target="_blank"><code>.its()</code></a> and <a href="https://on.cypress.io/should" target="_blank"><code>.should()</code></a> commands.</p>
-        <p>For example: <code>cy.request('GET', 'https://api.example.com/todos/1').its('status').should('be.equal', 200)</code>.</p>
+        <p>For example:</p>
+        <code>cy.request('GET', 'https://api.example.com/todos/1')</code>
+        <br>
+        <code>&nbsp;&nbsp;.its('status')</code>
+        <br>
+        <code>&nbsp;&nbsp;.should('be.equal', 200)</code>
       </div>
       <div id="input-range" class="section">
         <h2>
@@ -216,10 +226,18 @@
       <p>To deal with that, Cypress offers a few options.</p>
       <p>First, you can create a file called <a href="https://docs.cypress.io/guides/guides/environment-variables#Option-2-cypressenvjson" target="_blank"><code>cypress.env.json</code></a> and add it to the <code>.gitignore</code> file, so it won't be versioned.</p>
       <p>Then, you can use the <a href="https://docs.cypress.io/api/cypress-api/env" target="_blank"><code>Cypress.env()</code></a> command to retrieve information from such a file.</p>
-      <p>For example: <code>cy.get('input[type="password"]').type(Cypress.env('password'))</code>.</p>
+      <p>For example:</p>
+      <code>cy.get('input[type="password"]')</code>
+      <br>
+      <code>&nbsp;&nbsp;.type(Cypress.env('password'))</code>
+      <br>
       <p>With the above code example, you'd retrieve the value defined for the <code>password</code> property of the <code>cypress.env.json</code> file.</p>
       <p>Even so, with the above code example, although the password would not be hardcoded in the test file, it would still leak into the Cypress command logs.</p>
-      <p>To fix that, you could do this instead: <code>cy.get('input[type="password"]').type(Cypress.env('password'), { log: false })</code>.</p>
+      <p>To fix that, you could do this instead:</p>
+      <code>cy.request('GET', 'https://api.example.com/todos/1')</code>
+      <br>
+      <code>&nbsp;&nbsp;.type(Cypress.env('password'), { log: false })</code>
+      <br>
       <p>Note that, as a second argument for the <code>.type()</code> command, I'm passing an object with the property <code>log</code> with the value of <code>false</code>.</p>
       <p>This way, the sensitive data doesn't leak into the Cypress command logs since such a command won't even be logged.</p>
       <label for="#password">Type your password</label>
