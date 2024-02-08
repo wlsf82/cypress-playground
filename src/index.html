@@ -234,7 +234,7 @@
       <p>With the above code example, you'd retrieve the value defined for the <code>password</code> property of the <code>cypress.env.json</code> file.</p>
       <p>Even so, with the above code example, although the password would not be hardcoded in the test file, it would still leak into the Cypress command logs.</p>
       <p>To fix that, you could do this instead:</p>
-      <code>cy.request('GET', 'https://api.example.com/todos/1')</code>
+      <code>cy.get('input[type="password"]')</code>
       <br>
       <code>&nbsp;&nbsp;.type(Cypress.env('password'), { log: false })</code>
       <br>
