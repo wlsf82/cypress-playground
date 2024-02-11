@@ -10,6 +10,39 @@
   <body>
     <div>
       <h1 id="title">🌲 Cypress Playground 🛝</h1>
+      <div id="describe-it" class="section">
+        <h2>
+          <pre>describe()</pre>
+          <span>and</span>
+          <pre>it()</pre>
+        </h2>
+        <p>In <a href="https://cypress.io" target="_blank">Cypress</a>, test cases are organized in a test suite.</p>
+        <p>The most common way to define a test suite is using two different functions.</p>
+        <p>They are the <a href="https://docs.cypress.io/guides/references/bundled-libraries#Mocha">mocha</a>'s <code>describe()</code> and <code>it()</code> functions.</p>
+        <p>They receive a <code>string</code> as their first argument and a callback function as their second argument.</p>
+        <p>The <code>describe</code>'s first argument is the test suite description (e.g., 'Authentication', 'Products Search', 'Users List', etc.)</p>
+        <p>The test cases are defined inside the callback function (its second argument).</p>
+        <p>The <code>it()</code> function defines a test case.</p>
+        <p>The <code>it</code>'s first argument is the test case description (e.g., 'successfully logs in,' 'searches for a nonexistent product,' 'lists the first ten users,' etc.)</p>
+        <p>The test implementation details are inside the callback function (its second argument).</p>
+        <p>Below is an example of the skeleton of a test suite with a couple of test cases.</p>
+        <code>describe('Authentication', () => {</code>
+          <br>
+          <code>&nbsp;&nbsp;it('successfully logs in', () => {</code>
+          <br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;// test implementation here.</code>
+          <br>
+          <code>&nbsp;&nbsp;})</code>
+          <br>
+          <br>
+          <code>&nbsp;&nbsp;it('successfully logs out', () => {</code>
+          <br>
+          <code>&nbsp;&nbsp;&nbsp;&nbsp;// test implementation here.</code>
+          <br>
+          <code>&nbsp;&nbsp;})</code>
+          <br>
+          <code>})</code>
+      </div>
       <div id="visit" class="section">
         <h2>
           <pre>cy.visit()</pre>
