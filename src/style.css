@@ -6,6 +6,12 @@ body {
   padding: 20px;
 }
 
+q {
+  border-left: 2px solid gray;
+  margin-left: 20px;
+  padding: 8px;
+}
+
 .section {
   border-bottom: 2px solid #4CAF50;
   padding-bottom: 20px;
