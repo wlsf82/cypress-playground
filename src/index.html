@@ -208,7 +208,12 @@
         <p>With the <code>cy.intercept()</code> command, you could even simulate an API failure.</p>
         <p>For example: <code>cy.intercept('GET', 'https://api.example.com/todos/1', { statusCode: 500 }).as('serverFailure')</code>.</p>
         <p>Then, you could assert that it has really failed.</p>
-        <p>For example: <code>cy.wait('@serverFailure').its('response.statusCode').should('be.equal', 500)</code>.</p>
+        <p>For example:</p>
+        <code>cy.wait('@serverFailure')</code>
+        <br>
+        <code>&nbsp;&nbsp;.its('response.statusCode')</code>
+        <br>
+        <code>&nbsp;&nbsp;.should('be.equal', 500)</code>
         <p>And maybe, even assert that certain fallback element has been displayed.</p>
         <p>For example: <code>cy.contains('.error', 'Oops, something went wrong.').should('be.visible')</code>.</p>
         <p>Finally, with the <code>cy.intercept()</code>command, you could force a network error, to test how your web app would behave if there were no internet available, for instance.</p>
