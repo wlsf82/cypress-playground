@@ -24,6 +24,10 @@ q {
   margin-left: 10px;
 }
 
+#intro p strong {
+  margin-left: 0;
+}
+
 h1, h2 {
   color: #4CAF50;
 }
