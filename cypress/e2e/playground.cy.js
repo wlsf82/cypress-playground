@@ -16,7 +16,7 @@ describe('Cypress Playground', () => {
     cy.contains('#visit h2', 'cy.visit()').should('be.visible')
   })
 
-  it('clicks a button and ensure an action is triggered', () => {
+  it('clicks a button and ensures an action is triggered', () => {
     cy.clock()
     cy.contains('#click button', 'Subscribe').click()
     cy.contains(
@@ -35,7 +35,7 @@ describe('Cypress Playground', () => {
     cy.contains('#type em', 'Mad Max').should('be.visible')
   })
 
-  it('types in the signature, then checks the checkbox to see the preview, then unchecks it', () => {
+  it('types in the signature, checks the checkbox to see the preview, then unchecks it', () => {
     cy.get('#check textarea').type('Scarecrow')
     cy.get('#check input[type="checkbox"]').check()
     cy.contains('#check em', 'Scarecrow').should('be.visible')
@@ -116,7 +116,7 @@ describe('Cypress Playground', () => {
     cy.contains('#intercept ul li', `User ID: ${todo.userId}`).should('be.visible')
   })
 
-  it('clicks a button and simulate an API failure', () => {
+  it('clicks a button and simulates an API failure', () => {
     cy.intercept(
       'GET',
       'https://jsonplaceholder.typicode.com/todos/1',
@@ -132,7 +132,7 @@ describe('Cypress Playground', () => {
     ).should('be.visible')
   })
 
-  it('clicks a button and simulate a network failure', () => {
+  it('clicks a button and simulates a network failure', () => {
     cy.intercept(
       'GET',
       'https://jsonplaceholder.typicode.com/todos/1',
@@ -249,7 +249,7 @@ describe('Cypress Playground', () => {
     cy.get('#password-input input[type="password"]').should('be.visible')
   })
 
-  it('count the number of animals in a list', () => {
+  it('counts the number of animals in a list', () => {
     cy.get('#should-have-length ul li').should('have.length', 5)
   })
 
