@@ -375,6 +375,27 @@
         <button>Submit</button>
       </form>
     </div>
+    <div id="download" class="section">
+      <h2>
+        <pre>cy.readFile()</pre>
+      </h2>
+      <p>Sometimes, you need to test downloading a file.</p>
+      <p>For that, Cypress offers the <a href="https://on.cypress.io/readfile" target="_blank"><code>cy.readFile()</code></a> command.</p>
+      <p>The <code>cy.readFile()</code> command enables you to read a file, as its name suggests.</p>
+      <p>A use case for that could be as follows.</p>
+      <p>You could click an element that downloads a file, and then, read the file to check if its content is correct.</p>
+      <p><strong>Note: </strong>By default, Cypress downloads files inside the <code>cypress/downloads/</code> directory.</p>
+      <p>Here's an example:</p>
+      <code>cy.contains('a', 'Download a text file').click()</code>
+      <br>
+      <br>
+      <code>cy.readFile('cypress/downloads/example.txt')</code>
+      <br>
+      <code>&nbsp;&nbsp;.should('be.equal', 'This is an example text file.')</code>
+      <br>
+      <br>
+      <a href="data:,Hello%2C%20World%21" download="example.txt">Download a text file</a>
+    </div>
     <footer>
       <p>This app was made with a lot of 💚 by <a href="https://walmyr.dev" target="_blank">Walmyr</a>.</p>
     </footer>

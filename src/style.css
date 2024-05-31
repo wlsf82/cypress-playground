@@ -24,7 +24,8 @@ q {
   margin-left: 10px;
 }
 
-#intro p strong {
+#intro p strong,
+#download p strong {
   margin-left: 0;
 }
 
