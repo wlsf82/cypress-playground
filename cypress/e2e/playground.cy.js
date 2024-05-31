@@ -295,4 +295,10 @@ describe('Cypress Playground', () => {
           .should('not.be.visible')
       })
   })
+
+  it('downloads a file, reads it, and assert on its content', () => {
+    cy.contains('a', 'Download a text file').click()
+
+    cy.readFile('cypress/downloads/example.txt').should('be.equal', 'Hello, World!')
+  })
 })
