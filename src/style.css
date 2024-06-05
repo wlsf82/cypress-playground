@@ -25,7 +25,8 @@ q {
 }
 
 #intro p strong,
-#download p strong {
+#download p strong,
+p#try-it-out strong {
   margin-left: 0;
 }
 
