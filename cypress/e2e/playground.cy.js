@@ -301,4 +301,12 @@ describe('Cypress Playground', () => {
 
     cy.readFile('cypress/downloads/example.txt').should('be.equal', 'Hello, World!')
   })
+
+  it('downloads a file, reads it, and assert on its content through a js module', () => {
+    const exampleText = require('../fixtures/exampleText')
+
+    cy.contains('a', 'Download a text file').click()
+
+    cy.readFile('cypress/downloads/example.txt').should('be.equal', exampleText)
+  })
 })
