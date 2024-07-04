@@ -299,8 +299,8 @@
       <br>
       <code>&nbsp;&nbsp;.type(Cypress.env('password'))</code>
       <br>
-      <p id="try-it-out"><strong>Try it out by creating a test that types into the password field based on sensitive data comming from the <code>cypress.env.json</code> file. Check and uncheck the "Show password" checkbox and make sure the password is displayed and then masked.</strong></p>
       <p>With the above code example, you'd retrieve the value defined for the <code>password</code> property of the <code>cypress.env.json</code> file.</p>
+      <p id="try-it-out"><strong>Try it out by creating a test that types into the password field based on sensitive data comming from the <code>cypress.env.json</code> file. Check and uncheck the "Show password" checkbox and make sure the password is displayed and then masked.</strong></p>
       <p>Even so, with the above code example, although the password would not be hardcoded in the test file, it would still leak into the Cypress command logs.</p>
       <p>To fix that, you could do this instead:</p>
       <code>cy.get('input[type="password"]')</code>
