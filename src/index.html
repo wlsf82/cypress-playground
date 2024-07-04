@@ -379,6 +379,8 @@
       <code>&nbsp;&nbsp;})</code>
       <br>
       <br>
+      <p>The code above searches for an element (with the ID <code>some-element</code>), and then passes it to the callback function of the <code>.then()</code> command.</p>
+      <p>Within the body of the callback function, the internal text of such an element is obtained (which could be a dynamic value), and then this is typed into another field, using the combination of the commands <code>cy.get()</code> and <code>.type()</code>.</p>
       <p id="try-it-out"><strong>Try it out by creating a test that copies the below code, types it, and clicks the submit button. Make sure a success message is displayed.</strong></p>
       <p id="try-it-out"><strong>Also, see what happens when the wrong code is typed. Make sure to create a test for that too, asserting an error message is shown.</strong></p>
       <div>
