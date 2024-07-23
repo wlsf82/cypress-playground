@@ -152,7 +152,6 @@ ul li:hover {
 
 a {
   color: #4CAF50;
-  text-decoration: none;
   transition: color 0.3s ease;
 }
 
