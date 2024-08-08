@@ -8,7 +8,7 @@ body {
 
 #promotional-banner {
   text-align: center;
-  background-color: #4CAF50;
+  background-color: #2B642D;
   color: #ffffff;
   margin: -20px;
   padding: 20px;
@@ -29,7 +29,7 @@ q {
 }
 
 .section {
-  border-bottom: 2px solid #4CAF50;
+  border-bottom: 2px solid #2B642D;
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -47,7 +47,7 @@ p#try-it-out strong {
 }
 
 h1, h2 {
-  color: #4CAF50;
+  color: #2B642D;
 }
 
 .section h2, .section pre {
@@ -65,7 +65,7 @@ pre {
 }
 
 #click #success {
-  color: #4CAF50;
+  color: #2B642D;
   display: none;
   background-color: #e6ffed;
   padding: 10px;
@@ -81,7 +81,7 @@ pre {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #2B642D;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -107,7 +107,7 @@ textarea {
 
 label {
   margin-bottom: 5px;
-  color: #4CAF50;
+  color: #2B642D;
 }
 
 #check label:not(label[for="signature-textarea-with-checkbox"]) {
@@ -127,7 +127,7 @@ input[type="checkbox"] {
 }
 
 strong {
-  color: #4CAF50;
+  color: #2B642D;
 }
 
 select {
@@ -167,7 +167,7 @@ ul li:hover {
 }
 
 a {
-  color: #4CAF50;
+  color: #2B642D;
   transition: color 0.3s ease;
 }
 
@@ -189,7 +189,7 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background-color: #4CAF50;
+  background-color: #2B642D;
   border: 2px solid #fff;
   border-radius: 50%;
   cursor: pointer;
@@ -203,7 +203,7 @@ input[type="range"]:focus {
 input[type="range"]::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background-color: #4CAF50;
+  background-color: #2B642D;
   border: 2px solid #fff;
   border-radius: 50%;
   cursor: pointer;
@@ -228,7 +228,7 @@ input[type="date"] {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-  color: #4CAF50;
+  color: #2B642D;
   font-size: 14px;
   cursor: pointer;
   padding: 0;
@@ -246,7 +246,7 @@ input[type="date"]::-webkit-clear-button {
 }
 
 input[type="date"]:focus {
-  border-color: #4CAF50;
+  border-color: #2B642D;
 }
 
 #password-input input[type="password"], #password-input input[type="text"], #copy-paste input[type="number"] {
@@ -258,7 +258,7 @@ input[type="date"]:focus {
 
 #password-input input[type="password"]:focus, #password-input input[type="text"]:focus, #copy-paste input[type="number"]:focus {
   outline: none;
-  border-color: #4CAF50;
+  border-color: #2B642D;
   box-shadow: 0 0 5px lightgray;
 }
 
@@ -282,7 +282,7 @@ input[type="date"]:focus {
 
 #copy-paste .success {
   margin-left: 10px;
-  color: #4CAF50;
+  color: #2B642D;
   background-color: #e6ffed;
   padding: 10px;
   border-radius: 8px;
@@ -305,6 +305,7 @@ input[type="date"]:focus {
 }
 
 footer p {
+  padding-top: 12px;
   text-align: center;
 }
 
