@@ -14,10 +14,10 @@ describe('Cypress Playground', () => {
   it('shows a promotional banner', () => {
     cy.get('#promotional-banner')
       .should('be.visible')
-      .and('contain', '📣 Get to know the Cypress Playground course, available on Hotmart!')
+      .and('contain', '📣 Get to know the Cypress, from Zero to the Cloud course, available on Udemy!')
       .find('a')
       .should('have.attr', 'target', '_blank')
-      .and('have.attr', 'href', 'https://hotmart.com/pt-br/club/talking-about-testing')
+      .and('have.attr', 'href', 'https://www.udemy.com/course/cypress-from-zero-to-the-cloud/?referralCode=CABCDDFA5ADBB7BE2E1A')
   })
 
   it('after visiting a page, asserts some text is visible', () => {
