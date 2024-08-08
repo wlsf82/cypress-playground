@@ -14,7 +14,7 @@ describe('Cypress Playground', () => {
   it('shows a promotional banner', () => {
     cy.get('#promotional-banner')
       .should('be.visible')
-      .and('contain', '📣 Conheça o curso Cypress Playground, disponível no Hotmart!')
+      .and('contain', '📣 Get to know the Cypress Playground course, available on Hotmart!')
       .find('a')
       .should('have.attr', 'target', '_blank')
       .and('have.attr', 'href', 'https://hotmart.com/pt-br/club/talking-about-testing')
