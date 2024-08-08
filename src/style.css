@@ -6,6 +6,22 @@ body {
   padding: 20px;
 }
 
+#promotional-banner {
+  text-align: center;
+  background-color: #4CAF50;
+  color: #ffffff;
+  margin: -20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#promotional-banner strong a {
+  color: #ffffff;
+}
+
 q {
   border-left: 2px solid gray;
   margin-left: 20px;
@@ -293,6 +309,14 @@ footer p {
 }
 
 @media only screen and (max-width: 600px) {
+  #promotional-banner {
+    margin-right: -40px;
+  }
+
+  #promotional-banner {
+    line-height: 1.5em;
+  }
+
   h1 {
     font-size: 26px;
   }

@@ -11,6 +11,15 @@ describe('Cypress Playground', () => {
     }
   })
 
+  it('shows a promotional banner', () => {
+    cy.get('#promotional-banner')
+      .should('be.visible')
+      .and('contain', '📣 Conheça o curso Cypress Playground, disponível no Hotmart!')
+      .find('a')
+      .should('have.attr', 'target', '_blank')
+      .and('have.attr', 'href', 'https://hotmart.com/pt-br/club/talking-about-testing')
+  })
+
   it('after visiting a page, asserts some text is visible', () => {
     cy.contains('h1', 'Cypress Playground').should('be.visible')
     cy.contains('#visit h2', 'cy.visit()').should('be.visible')
