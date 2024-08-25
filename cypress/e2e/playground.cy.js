@@ -14,7 +14,7 @@ describe('Cypress Playground', () => {
   it('shows a promotional banner', () => {
     cy.get('#promotional-banner')
       .should('be.visible')
-      .and('contain', '📣 Get to know the Cypress, from Zero to the Cloud course, available on Udemy!')
+      .and('contain', '📣 Get to know the Cypress, from Zero to the Cloud course!')
       .find('a')
       .should('have.attr', 'target', '_blank')
       .and('have.attr', 'href', 'https://www.udemy.com/course/cypress-from-zero-to-the-cloud/?referralCode=CABCDDFA5ADBB7BE2E1A')
