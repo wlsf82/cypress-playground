@@ -20,8 +20,8 @@
   "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
   "license": "MIT",
   "devDependencies": {
-    "axe-core": "^4.10.0",
-    "cypress": "^13.14.2",
+    "axe-core": "^4.10.2",
+    "cypress": "^13.16.0",
     "cypress-axe": "^1.5.0"
   }
 }
