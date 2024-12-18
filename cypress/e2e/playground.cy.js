@@ -266,7 +266,7 @@ describe('Cypress Playground', () => {
     cy.contains(
       '#date-section #date-section-paragraph',
       'Current date: 1982-04-15'
-    )
+    ).should('be.visible')
   })
 
   it('copies the code, types it, submits it, then asserts on the success message', () => {
