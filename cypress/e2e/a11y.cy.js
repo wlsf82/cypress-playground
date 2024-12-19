@@ -1,10 +1,10 @@
 describe('Cypress Playground', () => {
   beforeEach(() => {
-    if (Cypress.env('environment') === 'prod') {
-      cy.visit('https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html')
-    } else {
-      cy.visit('./src/index.html')
-    }
+    const url = Cypress.env('environment') === 'prod'
+      ? 'https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html'
+      : './src/index.html'
+
+    cy.visit(url)
 
     cy.injectAxe()
   })
