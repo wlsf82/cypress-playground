@@ -33,10 +33,7 @@ describe('Cypress Playground', () => {
       "You've been successfully subscribed to our newsletter.",
     ).should('be.visible')
     cy.tick(3000)
-    cy.contains(
-      '#click span#success',
-      "You've been successfully subscribed to our newsletter.",
-    ).should('not.be.visible')
+    cy.get('#click span#success').should('not.be.visible')
   })
 
   it("types in an input which 'signs' a form, then asserts it's signed", () => {
