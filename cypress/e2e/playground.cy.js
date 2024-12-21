@@ -224,6 +224,7 @@ describe('Cypress Playground', () => {
         .trigger('change')
 
       cy.contains('#input-range p', `You're on level: ${index + 1}`)
+        .should('be.visible')
     })
   })
 
