@@ -1,6 +1,6 @@
 describe('Cypress Playground', () => {
   beforeEach(() => {
-    const url = Cypress.env('environment') === 'prod'
+    const url = Cypress.expose('environment') === 'prod'
       ? 'https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html'
       : './src/index.html'
 

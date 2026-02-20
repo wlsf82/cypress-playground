@@ -5,10 +5,10 @@
   "main": "src/index.html",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:open:prod": "cypress open --env environment=prod",
+    "cy:open:prod": "cypress open --expose environment=prod",
     "test": "cypress run --record false --browser chrome",
-    "test:prod": "cypress run --record false --browser chrome --env environment=prod",
-    "test:prod:cloud": "cypress run --browser chrome --record --tag 'prod' --env environment=prod"
+    "test:prod": "cypress run --record false --browser chrome --expose environment=prod",
+    "test:prod:cloud": "cypress run --browser chrome --record --tag 'prod' --expose environment=prod"
   },
   "keywords": [
     "Cypress Playground",
@@ -21,7 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "axe-core": "^4.11.1",
-    "cypress": "^15.9.0",
+    "cypress": "^15.10.0",
     "cypress-axe": "^1.7.0"
   }
 }

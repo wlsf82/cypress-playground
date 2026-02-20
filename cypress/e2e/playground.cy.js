@@ -4,7 +4,7 @@ describe('Cypress Playground', () => {
 
     cy.clock(date)
 
-    const url = Cypress.env('environment') === 'prod'
+    const url = Cypress.expose('environment') === 'prod'
       ? 'https://cypress-playground.s3.eu-central-1.amazonaws.com/index.html'
       : './src/index.html'
 
@@ -240,20 +240,22 @@ describe('Cypress Playground', () => {
   })
 
   it('types a password without leaking it, shows it, and hides it again', () => {
-    cy.get('#password-input input[type="password"]')
-      .type(Cypress.env('PASSWORD'), { log: false })
+    cy.env(['PASSWORD']).then(({ PASSWORD }) => {
+      cy.get('#password-input input[type="password"]')
+        .type(PASSWORD, { log: false })
 
-    cy.get('#password-input input[type="checkbox"').check()
+      cy.get('#password-input input[type="checkbox"').check()
 
-    cy.get('#password-input input[type="password"]').should('not.exist')
-    cy.get('#password-input input[type="text"]')
-      .should('be.visible')
-      .and('have.value', Cypress.env('PASSWORD'))
+      cy.get('#password-input input[type="password"]').should('not.exist')
+      cy.get('#password-input input[type="text"]')
+        .should('be.visible')
+        .and('have.value', PASSWORD)
 
-    cy.get('#password-input input[type="checkbox"').uncheck()
+      cy.get('#password-input input[type="checkbox"').uncheck()
 
-    cy.get('#password-input input[type="text"]').should('not.exist')
-    cy.get('#password-input input[type="password"]').should('be.visible')
+      cy.get('#password-input input[type="text"]').should('not.exist')
+      cy.get('#password-input input[type="password"]').should('be.visible')
+    })
   })
 
   it('counts the number of animals in a list', () => {
