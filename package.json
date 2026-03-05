@@ -21,7 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "axe-core": "^4.11.1",
-    "cypress": "^15.10.0",
+    "cypress": "^15.11.0",
     "cypress-axe": "^1.7.0"
   }
 }
